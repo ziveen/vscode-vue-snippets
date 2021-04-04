@@ -1,0 +1,50 @@
+{
+  "name": "vscode-vue-snippets",
+  "version": "0.1.0",
+  "description": "vue snippets for dxp team",
+  "main": "./out/index.js",
+  "author": "kazekage605",
+  "publisher": "ziveen",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazekage605/vscode-vue-snippets.git"
+  },
+  "categories": ["Snippets"],
+"scripts": {
+    "compile": "tsc -p ./",
+    "publish": "yarn compile"
+  },
+  "activationEvents": [
+    "onCommand:vue.extension.snippetSearch"
+  ],
+  "keybindings": [
+    {
+      "command": "vue.extension.snippetSearch",
+      "key": "ctrl+alt+v",
+      "mac": "shift+cmd+v",
+      "when": "editorTextFocus"
+    }
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "vue.extension.snippetSearch",
+        "title": "dxp:vue extesions"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@types/vscode": "^1.55.0"
+  }
+}
